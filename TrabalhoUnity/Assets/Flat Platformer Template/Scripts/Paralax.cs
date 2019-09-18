@@ -1,7 +1,6 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 [Serializable]
 public class BackGround
@@ -10,14 +9,15 @@ public class BackGround
     public float _damping = 0.5f;
 }
 
-public class Paralax : MonoBehaviour {
+public class Paralax : MonoBehaviour
+{
     public enum Mode
     {
         Horizontal,
         Vertical,
         HorizontalAndVertical
     }
- 
+
     public Mode parallaxMode;
     public List<BackGround> _backGrounds;
 
@@ -53,15 +53,15 @@ public class Paralax : MonoBehaviour {
                 switch (parallaxMode)
                 {
                     case Mode.Horizontal:
-                        position = new Vector3(_backGrounds[i]._backGround.position.x + parallax.x, 
+                        position = new Vector3(_backGrounds[i]._backGround.position.x + parallax.x,
                             _backGrounds[i]._backGround.position.y, _backGrounds[i]._backGround.position.z);
                         break;
                     case Mode.Vertical:
-                        position = new Vector3(_backGrounds[i]._backGround.position.x, 
+                        position = new Vector3(_backGrounds[i]._backGround.position.x,
                             _backGrounds[i]._backGround.position.y + parallax.y, _backGrounds[i]._backGround.position.z);
                         break;
                     case Mode.HorizontalAndVertical:
-                        position = new Vector3(_backGrounds[i]._backGround.position.x + parallax.x, 
+                        position = new Vector3(_backGrounds[i]._backGround.position.x + parallax.x,
                             _backGrounds[i]._backGround.position.y + parallax.y, _backGrounds[i]._backGround.position.z);
                         break;
                 }
