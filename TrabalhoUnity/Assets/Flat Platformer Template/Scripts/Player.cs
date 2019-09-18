@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     private float _initPos = 34.714f;
     private float finalPos = 0.0f;
-    private float targetTime = 0.5f;
+    private float targetTime = 0.1f;
     private float deltaTime = 0.0f;
     private bool isAttaking = false;
     private float bladeAngle = 0.0f;
