@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
     public float WalkSpeed;
     public float JumpForce;
     public AnimationClip _walk, _jump;
@@ -13,7 +11,6 @@ public class Player : MonoBehaviour {
     public Camera cam;
     public bool mirror;
 
-
     private bool _canJump, _canWalk;
     private bool _isWalk, _isJump;
     private float rot, _startScale;
@@ -21,21 +18,19 @@ public class Player : MonoBehaviour {
     private Vector2 _inputAxis;
     private RaycastHit2D _hit;
 
-	void Start ()
+    private float _initPos = 34.714f;
+    private float finalPos = 0.0f;
+    private float targetTime = 0.5f;
+    private float deltaTime = 0.0f;
+    private bool isAttaking = false;
+    private float bladeAngle = 0.0f;
+    private bool invert = false;
+
+    void Start()
     {
         rig = gameObject.GetComponent<Rigidbody2D>();
         _startScale = transform.localScale.x;
-	}
-
-
-    float _initPos = 34.714f;
-    float finalPos = 0.0f;
-    public float targetTime = 0.5f;
-    float deltaTime = 0.0f;
-    public bool isAttaking = false;
-    float bladeAngle = 0.0f;
-    bool invert = false;
-
+    }
 
     void Update()
     {
@@ -55,20 +50,20 @@ public class Player : MonoBehaviour {
             _canWalk = false;
             _isJump = true;
         }
-               
 
         if (Input.GetButtonDown("Fire1") && !isAttaking)
         {
             isAttaking = true;
             invert = false;
         }
-        if(isAttaking)
+
+        if (isAttaking)
         {
             deltaTime += Time.deltaTime;
             if (!invert)
             {
                 bladeAngle = Mathf.LerpAngle(_initPos, finalPos, deltaTime / targetTime);
-                if(deltaTime >= targetTime)
+                if (deltaTime >= targetTime)
                 {
                     invert = true;
                     deltaTime = 0.0f;
@@ -76,7 +71,7 @@ public class Player : MonoBehaviour {
             }
             else
             {
-                bladeAngle = Mathf.LerpAngle(finalPos, _initPos , deltaTime / targetTime);
+                bladeAngle = Mathf.LerpAngle(finalPos, _initPos, deltaTime / targetTime);
                 if (deltaTime >= targetTime)
                 {
                     invert = false;
@@ -90,8 +85,6 @@ public class Player : MonoBehaviour {
             _Blade.transform.localEulerAngles = rotation;
 
         }
-
-
     }
 
     void FixedUpdate()
@@ -117,8 +110,6 @@ public class Player : MonoBehaviour {
             _Blade.transform.rotation = Quaternion.AngleAxis(rot, Vector3.forward);
         }
 
-
-
         if (_inputAxis.x != 0)
         {
             rig.velocity = new Vector2(_inputAxis.x * WalkSpeed * Time.deltaTime, rig.velocity.y);
@@ -143,9 +134,6 @@ public class Player : MonoBehaviour {
             _canJump = false;
             _isJump = false;
         }
-
-     
-
     }
 
     public bool IsMirror()
