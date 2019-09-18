@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Mantle : MonoBehaviour {
+public class Mantle : MonoBehaviour
+{
     public Player _player;
     public float _offset;
     private bool _isMirror;
