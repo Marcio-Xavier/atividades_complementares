@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{8BE0DC03-16CA-7921-BDF1-0245D4D754ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -63,6 +64,7 @@
     <Compile Include="Assets\Flat Platformer Template\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Flat Platformer Template\Scripts\Mantle.cs" />
     <Compile Include="Assets\Flat Platformer Template\Scripts\Paralax.cs" />
+    <Compile Include="Assets\Flat Platformer Template\Scripts\Player2.cs" />
     <Compile Include="Assets\Flat Platformer Template\Scripts\Player.cs" />
     <Compile Include="Assets\Flat Platformer Template\Scripts\WindMill.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
