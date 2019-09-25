@@ -3,6 +3,7 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
+//teste	
     public float WalkSpeed;
     public float JumpForce;
     public AnimationClip _walk, _jump;
