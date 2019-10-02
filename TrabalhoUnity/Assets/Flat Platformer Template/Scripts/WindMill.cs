@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//Utilizado a rotação do moinho com o script do próprio asset.
 public class WindMill : MonoBehaviour
 {
     public float _Speed;

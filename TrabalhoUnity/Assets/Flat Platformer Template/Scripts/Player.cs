@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+
+//Desenvolvido com aulas, próprio asset, ajuda do professor e link abaixo.
+//https://unity3d.com/pt/learn/tutorials/topics/2d-game-creation/creating-basic-platformer-game
 public class Player : MonoBehaviour
 {
     public float WalkSpeed;

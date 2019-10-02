@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//Utilizado do próprio asset Flat PlatFormer
 public class Mantle : MonoBehaviour
 {
     public Player _player;
