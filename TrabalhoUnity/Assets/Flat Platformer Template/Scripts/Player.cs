@@ -6,6 +6,7 @@
 //https://unity3d.com/pt/learn/tutorials/topics/2d-game-creation/creating-basic-platformer-game
 public class Player : MonoBehaviour
 {
+//teste	
     public float WalkSpeed;
     public float JumpForce;
     public AnimationClip _walk, _jump;
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
 
     private float _initPos = 34.714f;
     private float finalPos = 0.0f;
-    private float targetTime = 0.5f;
+    private float targetTime = 0.1f;
     private float deltaTime = 0.0f;
     private bool isAttaking = false;
     private float bladeAngle = 0.0f;
