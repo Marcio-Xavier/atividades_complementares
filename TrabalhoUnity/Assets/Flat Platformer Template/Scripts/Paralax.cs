@@ -9,6 +9,11 @@ public class BackGround
     public float _damping = 0.5f;
 }
 
+
+//Desenvolvido a alteração das posições com base abaixo
+//https://unity3d.com/pt/learn/tutorials/projects/roll-ball-tutorial/moving-camera
+
+
 public class Paralax : MonoBehaviour
 {
     public enum Mode

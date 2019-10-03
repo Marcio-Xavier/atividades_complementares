@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+//Algoritmo de camera baseado no próprio asset e nos link abaixo
+//https://unity3d.com/pt/learn/tutorials/projects/2d-ufo-tutorial/following-player-camera
+//https://www.noob-programmer.com/unity3d/making-the-camera-follow-an-object/
+
 public class CameraMove : MonoBehaviour
 {
     public float damping = 1.5f;
