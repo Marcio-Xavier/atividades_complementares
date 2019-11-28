@@ -6,7 +6,7 @@
 //https://unity3d.com/pt/learn/tutorials/topics/2d-game-creation/creating-basic-platformer-game
 public class Player : MonoBehaviour
 {
-//teste	
+    //teste	
     public float WalkSpeed;
     public float JumpForce;
     public AnimationClip _walk, _jump;
@@ -26,9 +26,25 @@ public class Player : MonoBehaviour
     private float finalPos = 0.0f;
     private float targetTime = 0.1f;
     private float deltaTime = 0.0f;
-    private bool isAttaking = false;
+    public static bool isAttaking = false;
+    public static int _boxCount = 0;
     private float bladeAngle = 0.0f;
     private bool invert = false;
+    private float timeLeft = 120.0f;
+
+    public static int BoxCount
+    {
+        get => _boxCount;
+        set
+        {
+            _boxCount = value;
+            if (_boxCount >= 10)
+            {
+                // Muda Skin
+                _boxCount = 0;
+            }
+        }
+    }
 
     void Start()
     {
@@ -89,6 +105,13 @@ public class Player : MonoBehaviour
             _Blade.transform.localEulerAngles = rotation;
 
         }
+        timeLeft -= Time.deltaTime;
+        if (timeLeft < 0)
+        {
+
+            GameManager.GetInstance().SetDeath(true);
+        }
+
     }
 
     void FixedUpdate()
@@ -149,4 +172,7 @@ public class Player : MonoBehaviour
     {
         Gizmos.DrawLine(transform.position, _GroundCast.position);
     }
+
+
+
 }

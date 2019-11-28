@@ -2,3 +2,4 @@ sceneSetups:
 - path: Assets/Flat Platformer Template/Scenes/Demo.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
